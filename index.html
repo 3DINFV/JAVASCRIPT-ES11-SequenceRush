@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sequence Rush</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <header>
+    <h1>Sequence Rush</h1>
+    <span>Esercitazione JS - Simon Says</span>
+  </header>
+
+  <div class="shell">
+
+    <!-- ── MAIN ── -->
+    <main>
+      <!-- sequenza da memorizzare -->
+      <div>
+        <div style="margin-bottom:8px;">Sequenza da riprodurre — Round <span id="round-num">—</span></div>
+        <div id="sequence-display">
+          <div class="seq-slot" id="sym0">?</div>
+          <div class="seq-slot" id="sym1">?</div>
+          <div class="seq-slot" id="sym2">?</div>
+          <div class="seq-slot" id="sym3">?</div>
+          <div class="seq-slot" id="sym4">?</div>
+          <div class="seq-slot" id="sym5">?</div>
+          <div class="seq-slot" id="sym6">?</div>
+          <div class="seq-slot" id="sym7">?</div>
+          <div class="seq-slot" id="sym8">?</div>
+          <div class="seq-slot" id="sym9">?</div>
+        </div>
+      </div>
+
+      <!-- timer di input -->
+      <div id="input-timer-wrap">
+        <div>Tempo rimasto</div>
+        <div id="input-timer-num">—</div>
+      </div>
+
+      <!-- griglia pulsanti -->
+      <div>
+        <div style="margin-bottom:8px;">Premi i simboli nell'ordine corretto</div>
+        <div id="btn-grid">
+          <button class="sym-btn" onclick="chooseSymbol(0)"><span>💻</span><span class="sym-label">CPU</span></button>
+          <button class="sym-btn" onclick="chooseSymbol(1)"><span>🌐</span><span class="sym-label">NET</span></button>
+          <button class="sym-btn" onclick="chooseSymbol(2)"><span>🗄️</span><span class="sym-label">DB</span></button>
+          <button class="sym-btn" onclick="chooseSymbol(3)"><span>🐛</span><span class="sym-label">BUG</span></button>
+          <button class="sym-btn" onclick="chooseSymbol(4)"><span>🔑</span><span class="sym-label">KEY</span></button>
+          <button class="sym-btn" onclick="chooseSymbol(5)"><span>📦</span><span class="sym-label">PKG</span></button>
+          <button class="sym-btn" onclick="chooseSymbol(6)"><span>🔒</span><span class="sym-label">SEC</span></button>
+          <button class="sym-btn" onclick="chooseSymbol(7)"><span>☁️</span><span class="sym-label">CLD</span></button>
+        </div>
+      </div>
+
+      <div>
+        <h3>Risultato del round: <span id="risRound">—</span></h3>
+      </div>
+
+    </main>
+
+    <!-- ── SIDEBAR ── -->
+    <aside>
+      <div>
+        <div>Punteggio</div>
+        <div class="s-value" id="score">0</div>
+      </div>
+
+      <div>
+        <div>Lunghezza sequenza</div>
+          <div class="s-value" id="seq-len-display">—</div>
+      </div>
+
+      <div>
+        <div>Vite</div>
+        <div id="lives-row"></div>
+      </div>
+
+      <button class="btn" id="btn-start" onclick="start()">▶ Inizia Partita</button>
+      <button class="btn outline" id="btn-restart" style="display:none">↺ Ricomincia</button>
+    </aside>
+  </div>
+  <script src="js/index.js"></script>
+</body>
+</html>
